@@ -15,7 +15,7 @@ deploy = async() =>{
   const result = await new web3.eth.Contract(JSON.parse(interface))
       .deploy({
           /*
-          不加前缀'0x'出错：UnhandledPromiseRejectionWarning: Error: The contract code couldn't be stored, please check your gas limit.
+          如果不加前缀'0x'出错：UnhandledPromiseRejectionWarning: Error: The contract code couldn't be stored, please check your gas limit.
            */
         data:'0x'+bytecode,
         arguments: ['Hello,Inbox!The first smart contract!']
